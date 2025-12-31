@@ -46,4 +46,13 @@ Do APP_CPU được điều khiển bổ sung bởi nhóm thanh ghi DPort (PRO_C
 
 Tuy nhiên cách thực hiện reset chỉ xảy ra với nguồn đầu vào là tín hiệu reset độc lập của PRO_CPU.
 
+Kiểm chứng thông tin trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 40, 41
+
 # Clock system trên ESP32-WROOM-32
+Về thiết kế cơ bản, ESP32-WROOM-32 gồm các nguồn chính sau:
+- CLK tốc độ cao
+  - `PLL_CLK` là clk nội bộ với dải tần số từ 320MHz đến 480MHz
+  - `XTL_CLK` là clk từ thạch anh ngoài với tần số 2-40MHz
+- CLK tốc độ thấp
+- CLK cho Audio
+
