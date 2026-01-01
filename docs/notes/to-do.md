@@ -8,7 +8,8 @@ Lộ trình triển khai chi tiết, đi từ
 
 # Giai đoạn Cốt lõi
 - [x] Thiết kế khung dự án (Project Structure)
-- [ ] Bổ sung các tài liệu căn bản của dự án
+- [x] Bổ sung các tài liệu căn bản của dự án
+- [x] Tìm hiểu về thiết kế reset và clock nội bộ của ESP32 
 - [ ] Tìm hiểu cấu trúc phần cứng của ESP32
 - [ ] Tìm hiểu đầy đủ về I2S Protocol
 # Giai đoạn Kiến trúc
