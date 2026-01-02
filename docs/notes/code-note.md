@@ -1,0 +1,1 @@
+1. Trước khi viết driver nên tìm hiểu bổ sung về vấn đề Big/Little Endian trên ESP32. Nếu không xác định đúng sẽ rất dễ gặp lỗi khi xử lý dữ liệu nhị phân hoặc trong quá trình cài đặt thanh ghi hoặc set/reset các bit trên thanh ghi sẽ bị sai lệch.
