@@ -1,8 +1,8 @@
 # High-Frequency Audio Data Acquisition using ESP32-WROOM-32
 This README is a sub-artifact served as an inner README or artifactspace of the main project (parent folder).
 
-## Folder contents
-The project **High-Frequency Audio Data Acquisition using ESP32-WROOM-32** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+## artifactspace contents
+The artifactspace of the project **High-Frequency Audio Data Acquisition using ESP32-WROOM-32** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
 
 ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
 Below is short explanation of remaining files in the project folder.
