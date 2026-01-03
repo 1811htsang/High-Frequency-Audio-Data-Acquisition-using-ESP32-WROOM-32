@@ -11,9 +11,9 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Bổ sung các tài liệu căn bản của dự án
 - [x] Tìm hiểu về thiết kế reset và clock nội bộ của ESP32 
 - [x] Viết driver setup clock cho ESP32 lên tối đa 240MHz
-- [ ] Bổ sung driver để call system reset lên hệ thống
-- [ ] Tìm hiểu cấu trúc phần cứng của ESP32
 - [ ] Tìm hiểu đầy đủ về I2S Protocol
+- [ ] Bổ sung driver để call system reset lên hệ thống
+
 # Giai đoạn Kiến trúc
 # Giai đoạn DSP
 # Giai đoạn Giao tiếp dữ liệu
