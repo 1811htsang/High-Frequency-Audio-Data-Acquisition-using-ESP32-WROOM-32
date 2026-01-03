@@ -5,3 +5,11 @@ project-obsidianspace/.obsidian/workspace.json
 project-obsidianspace/.obsidian/themes/Tokyo Night/manifest.json
 project-obsidianspace/.obsidian/themes/Tokyo Night/theme.css
 .vscode/settings.json
+project-artifactspace/main/CMakeLists.txt
+project-artifactspace/.clangd
+project-artifactspace/CMakeLists.txt
+project-artifactspace/.devcontainer/devcontainer.json
+project-artifactspace/.devcontainer/Dockerfile
+project-artifactspace/.vscode/c_cpp_properties.json
+project-artifactspace/.vscode/launch.json
+project-artifactspace/.vscode/settings.json
