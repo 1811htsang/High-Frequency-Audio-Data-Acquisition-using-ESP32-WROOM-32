@@ -118,6 +118,8 @@ Có 4 loại reset chính trong module I2S:
 
 Tất cả các loại reset này đều được thực hiện thông qua việc thiết lập (mức cao 1) các bit tương ứng trong thanh ghi `I2S_CONF_REG`.
 
+Kiểm chứng thông tin về reset module I2S được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 317.
+
 # Hoạt động của FIFO
 FIFO đóng vai trò lưu trữ tạm thời. 
 
@@ -131,3 +133,41 @@ FIFO có thể access thông qua CPU hoặc DMA.
 - Phần cứng sẽ tự động quản lý số lượng thông qua `RX_LEN` và `TX_LEN`.
 - Nếu `RX_LEN` > `I2S_RX_DATA_NUM[5:0]` thì sẽ kích hoạt ngưỡng và cần đọc ra để tránh tràn FIFO.
 - Nếu `TX_LEN` < `I2S_TX_DATA_NUM[5:0]` thì phần mềm có thể tiếp tục ghi dữ liệu vào FIFO.
+
+Kiểm chứng thông tin về hoạt động của FIFO được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 318.
+
+# Nguyên lý gửi dữ liệu
+Diễn ra 3 giai đoạn:
+1. Đọc dữ liệu từ bộ nhớ nội và truyền tải vào trong FIFO.
+2. Đọc dữ liệu từ FIFO.
+3. Truyền dữ liệu tuần tự hoặc song song tùy vào cấu hình.
+
+## Ở giai đoạn 1:
+Do có thể chia ra chế độ truyền tuần tự / song song nên cấu trúc dữ liệu trong FIFO cũng có sự khác biệt.
+
+Trong đó, ở chế độ song song, 16 bit cao của 2 địa chỉ sẽ truyền vào FIFO trước, tiếp theo là 16 bit thấp của 2 địa chỉ.
+
+Kiểm chứng thông tin về nguyên lý gửi dữ liệu được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 319.
+
+## Ở giai đoạn 2:
+Chế độ đọc dữ liệu sẽ do các bit `I2S_TX_FIFO_MOD[2:0]` và `I2S_TX_CHAN_MOD[2:0]`. 
+
+`I2S_TX_FIFO_MOD[2:0]` xác định dữ liệu sẽ theo loại 16-bit hay 32-bit.
+
+`I2S_TX_CHAN_MOD[2:0]` xác định định dạng dữ liệu sẽ truyền tải
+
+Kiểm chứng thông tin về nguyên lý gửi dữ liệu được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 319.
+
+## Ở giai đoạn 3:
+Tín hiệu dữ liệu sẽ được xác định bởi các chế độ đã chọn của I2S và `I2S_TX_BITS_MOD[5:0]` của thanh ghi `I2S_SAMPLE_RATE_CONF_REG`.
+
+# Nguyên lý nhận dữ liệu
+Diễn ra 3 giai đoạn:
+1. Dòng dữ liệu bit tuần tự được biến đổi thành dòng dữ liệu song song 64 bit.
+2. Dữ liệu song song 64 bit được truyền vào FIFO.
+3. Dữ liệu từ FIFO được ghi vào bộ nhớ nội thông qua CPU/DMA.
+
+## Ở giai đoạn 1:
+Dòng dữ liệu nhận được sẽ mở rộng thành dòng dữ liệu song song không padding 64 bit với 32 bit cao và 32 bit thấp dựa vào cấu hình của tín hiệu `I2SnI_WS_out` hoặc `I2SnI_WS_in`.
+
+Về cách mở rộng dữ liệu sẽ do bit `I2S_RX_MSB_RIGHT` của thanh ghi `I2S_CONF_REG` quyết định.
