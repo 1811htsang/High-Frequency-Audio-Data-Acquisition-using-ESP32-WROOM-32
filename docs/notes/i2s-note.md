@@ -137,6 +137,15 @@ FIFO có thể access thông qua CPU hoặc DMA.
 Kiểm chứng thông tin về hoạt động của FIFO được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 318.
 
 # Nguyên lý gửi dữ liệu
+
+Bit `I2S_TX_START` của thanh ghi `I2S_CONF_REG` được thiết lập (mức cao 1) để bắt đầu quá trình truyền tải dữ liệu. Khi I2S ở chế độ master truyền tải thì module đóng vai trò tạo tín hiệu clock và dữ liệu 2 kênh. 
+
+Nếu dữ liệu trong FIFO đã truyền tải hết và không còn dữ liệu mới để gửi đi thì tín hiệu dữ liệu sẽ giữ nguyên giá trị cuối cùng đã truyền tải.
+
+Nếu bit `I2S_TX_START` được xóa (mức thấp 0) thì quá trình truyền tải dữ liệu sẽ dừng lại sau khi hoàn thành việc gửi đi dữ liệu hiện tại.
+
+Đối với chế độ slave truyền tải thì module sẽ chờ tín hiệu clock và dữ liệu từ thiết bị master.
+
 Diễn ra 3 giai đoạn:
 1. Đọc dữ liệu từ bộ nhớ nội và truyền tải vào trong FIFO.
 2. Đọc dữ liệu từ FIFO.
@@ -162,6 +171,11 @@ Kiểm chứng thông tin về nguyên lý gửi dữ liệu được mô tả c
 Tín hiệu dữ liệu sẽ được xác định bởi các chế độ đã chọn của I2S và `I2S_TX_BITS_MOD[5:0]` của thanh ghi `I2S_SAMPLE_RATE_CONF_REG`.
 
 # Nguyên lý nhận dữ liệu
+
+Bit `I2S_RX_START` của thanh ghi `I2S_CONF_REG` được thiết lập (mức cao 1) để bắt đầu quá trình ghi nhận dữ liệu. Khi I2S ở chế độ master ghi nhận thì module đóng vai trò tạo tín hiệu clock và lấy mẫu dữ liệu 2 kênh cho đến khi bit `I2S_RX_START` được xóa (mức thấp 0).
+
+Nếu I2S ở chế độ slave ghi nhận thì module sẽ chờ tín hiệu clock và dữ liệu từ thiết bị master.
+
 Diễn ra 3 giai đoạn:
 1. Dòng dữ liệu bit tuần tự được biến đổi thành dòng dữ liệu song song 64 bit.
 2. Dữ liệu song song 64 bit được truyền vào FIFO.
@@ -171,3 +185,43 @@ Diễn ra 3 giai đoạn:
 Dòng dữ liệu nhận được sẽ mở rộng thành dòng dữ liệu song song không padding 64 bit với 32 bit cao và 32 bit thấp dựa vào cấu hình của tín hiệu `I2SnI_WS_out` hoặc `I2SnI_WS_in`.
 
 Về cách mở rộng dữ liệu sẽ do bit `I2S_RX_MSB_RIGHT` của thanh ghi `I2S_CONF_REG` quyết định.
+
+Giải thích ví dụ ở trang 320 của [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf):
+
+Trong hình, cho độ rộng dữ liệu là 16 bit, và dữ liệu tuần tự lần lượt là
+1. `0x7654`
+2. `0xFEDC`
+3. `0x3210`
+4. `0xBA98`
+
+- Nếu `I2S_RX_RIGHT_FIRST = 1`, data0 sẽ bị loại bỏ ghi nhận, data1 làm dữ liệu đầu tiên mà I2S ghi nhận.
+  - Nếu `I2S_RX_MSB_RIGHT = 1`, dữ liệu đầu tiên ghi nhận được là `{0xFEDC0000, 0x32100000}`
+  - Nếu `I2S_RX_MSB_RIGHT = 0`, dữ liệu đầu tiên ghi nhận được là `{0x32100000, 0xFEDC0000}`
+- Nếu `I2S_RX_RIGHT_FIRST = 0`, data0 sẽ là dữ liệu đầu tiên mà I2S ghi nhận.
+  - Nếu `I2S_RX_MSB_RIGHT = 1`, dữ liệu đầu tiên ghi nhận được là `{0xFEDC0000, 0x76540000}`
+  - Nếu `I2S_RX_MSB_RIGHT = 0`, dữ liệu đầu tiên ghi nhận được là `{0x76540000, 0xFEDC0000}`
+
+Kiểm chứng thông tin về nguyên lý nhận dữ liệu được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 320.
+
+## Ở giai đoạn 2:
+Dữ liệu nhận vào từ đơn vị RX sẽ lưu vào trong FIFO.
+
+Các chế độ lưu vào được xác định bởi các bit `I2S_RX_FIFO_MOD[2:0]` trong thanh ghi `I2S_FIFO_CONF_REG`.
+
+Kiểm chứng thông tin về nguyên lý nhận dữ liệu được mô tả chi tiết trong [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 320.
+
+## Ở giai đoạn 3:
+CPU/DMA sẽ đọc dữ liệu từ FIFO và ghi vào bộ nhớ nội.
+
+Các cấu hình đọc dữ liệu được xác định bởi `I2S_RX_MSB_RIGHT` và `I2S_RX_CHAN_MOD`
+
+# Chế độ Slave/ Master
+Cả đơn vị TX và RX đều có thể hoạt động ở chế độ Slave hoặc Master.
+
+Tất cả các chê độ đều có thể hỗ trợ full-duplex và half-duplex.
+
+Xác định thông qua `I2S_RX_SLAVE_MOD` và `I2S_TX_SLAVE_MOD` trong thanh ghi `I2S_CONF_REG`.
+
+# Ngắt của I2S
+Trình bày chi tiết trong tài liệu [tech-dts](/docs/references/esp32-technical-reference-manual-ver-5_2.pdf) trang 326, 327.
+
