@@ -213,7 +213,7 @@ Kiểm chứng thông tin về nguyên lý nhận dữ liệu được mô tả 
 ## Ở giai đoạn 3:
 CPU/DMA sẽ đọc dữ liệu từ FIFO và ghi vào bộ nhớ nội.
 
-Các cấu hình đọc dữ liệu được xác định bởi `I2S_RX_MSB_RIGHT` và `I2S_RX_CHAN_MOD`
+Các cấu hình đọc dữ liệu được xác định bởi `I2S_RX_MSB_RIGHT` và `I2S_RX_CHAN_MOD`.
 
 # Chế độ Slave/ Master
 Cả đơn vị TX và RX đều có thể hoạt động ở chế độ Slave hoặc Master.
