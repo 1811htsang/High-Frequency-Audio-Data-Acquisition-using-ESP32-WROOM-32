@@ -190,6 +190,15 @@ Khi sử dụng GP-SPI ở chế độ slave, tín hiệu clock và tín hiệu 
 
 Kiểm chứng thông tin trong trang 133 của [tech-dts](docs/../../references/esp32-technical-reference-manual-ver-5_2.pdf).
 
+
+
+## Phần cứng hỗ trợ ngắt
+SPI tạo ra 2 loại ngắt là ngắt SPI và ngắt SPI DMA.
+
+SPI xem sự hoàn tất của quá trình truyền/nhận dữ liệu là sự hoàn tất của controller và tạo ra 1 ngắt. Khi SPI được cấu hình làm slave mode, slave sẽ tạo các status reg & bộ đệm đọc/ghi ngắt dựa theo các hoạt động.
+
+Thông tin về các ngắt có trong [tech-dts](docs/../../references/esp32-technical-reference-manual-ver-5_2.pdf) trang 134.
+
 # QSPI
 Thông tin về kết nối sử dụng QSPI cho Flash và SRAM có trong trang 133, 134 của [tech-dts](docs/../../references/esp32-technical-reference-manual-ver-5_2.pdf).
 
