@@ -1,6 +1,10 @@
 #ifndef LIB_KEYWORD_DEFINE_H_
   #define LIB_KEYWORD_DEFINE_H_
 
+  // Khai báo các thư viện sử dụng chung
+
+  #include <stdint.h>
+
   // Khai báo các định nghĩa dùng chung
 
   #define __vo volatile
@@ -18,6 +22,7 @@
   #define FALSE LOW
   #define u unsigned
   #define ul unsigned long
+  #define ui unsigned int
   #define BLANK_REG uint32_t
   #define __weak __attribute__((weak))
   #define DEBUG_MODE ENABLE

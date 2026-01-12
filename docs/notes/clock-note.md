@@ -65,7 +65,7 @@ Kiểm chứng thông tin trong [tech-dts](/docs/references/esp32-technical-refe
 Nguồn này lấy trực tiếp từ `PLL_CLK` với tần số cố định 160MHz không thay đổi.
 
 ## Cân nhắc lựa chọn clock đối với ngoại vi
-Trong tài liệu về bảng thông tin nguồn clock cho các loại ngoại vii, ta có thể thấy rằng tất cả ngoại vi đều có thể sử dụng `APB_CLK` làm nguồn clock chính. 
+Trong tài liệu về bảng thông tin nguồn clock cho các loại ngoại vi, ta có thể thấy rằng tất cả ngoại vi đều có thể sử dụng `APB_CLK` làm nguồn clock chính. 
 
 Ngoài ra nếu tần số của `APB_CLK` bị thay đổi thì các ngoại vi cũng đều phải thực hiện cập nhật lại tần số hoạt động tương ứng trừ các ngoại vi có thể sử dụng `REF_TICK` làm nguồn clock.
 
