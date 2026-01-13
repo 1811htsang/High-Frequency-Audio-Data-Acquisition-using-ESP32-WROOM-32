@@ -59,12 +59,17 @@
     __vo ui RESERVED0 : 24;
   } SYSCON_PLL_TICK_CONF_REG_Typedef;
 
+  typedef __vo struct SYSCON_APLL_TICK_CONF_REG {
+    __vo ui SYSCON_APLL_TICK_NUM : 8;
+    __vo ui RESERVED0 : 24;
+  } SYSCON_APLL_TICK_CONF_REG_Typedef;
+
   /**
    * Ghi chú:
    * Các cấu trúc thanh ghi cần sử dụng sẽ được bổ sung thêm trong tương lai.
    */
 
-  // Khai báo con trỏ tới thanh ghi
+  // Khai báo cấu trúc ngoại vi
 
   typedef struct RTC_CNTL_REGS_PTRS {
     __vo BLANK_REG RESERVED0[42];
@@ -73,17 +78,47 @@
   } RTC_CNTL_REGS_Typedef;
 
   typedef struct DPORT_REGS_PTRS {
-    __vo BLANK_REG RESERVED0[15];
-    __vo DPORT_CPU_PER_CONF_REG_Typedef DPORT_CPU_PERI_CLK_EN;
-    __vo BLANK_REG RESERVED1[1]; 
-
-    /**
-     * Ghi chú:
-     * Phần này kiểm tra lại trong tương lai
-     */
-
+    __vo BLANK_REG RESERVED0[3];
+    __vo DPORT_CPU_PER_CONF_REG_Typedef DPORT_CPU_PER_CONF_REG;
+    __vo BLANK_REG RESERVED1[148]; 
   } DPORT_REGS_Typedef;
 
-  // Khai báo các định nghĩa bit cần sử dụng 
+  typedef struct SYSCON_REGS_PTRS {
+    __vo BLANK_REG RESERVED0[2];
+    __vo SYSCON_PLL_TICK_CONF_REG_Typedef SYSCON_PLL_TICK_CONF;
+    __vo BLANK_REG RESERVED1[11];
+    __vo SYSCON_APLL_TICK_CONF_REG_Typedef SYSCON_APLL_TICK_CONF;
+    __vo BLANK_REG RESERVED2[16];
+  } SYSCON_REGS_Typedef;  
+
+  /**
+   * Ghi chú:
+   * Các cấu trúc ngoại vi cần sử dụng sẽ được bổ sung thêm trong tương lai.
+   */
+
+  // Khai báo con trỏ tới thanh ghi
+
+  #define RTC_CNTL_REGS ((RTC_CNTL_REGS_Typedef *)RTC_CNTL_REGS_DPTBUS_BASEADDR)
+  #define DPORT_REGS ((DPORT_REGS_Typedef *)DPORT_REGS_BASEADDR)
+  #define SYSCON_REGS ((SYSCON_REGS_Typedef *)SYSCON_REGS_BASEADDR)
+
+  // Khai báo các định nghĩa bit cần sử dụng trên RTC_CNTL_CLK_CONF_REG
+  #define RTC_CNTL_CLK_CONF_REG_ANA_CLK_RTC_SEL_RCS 0x00ul
+  #define RTC_CNTL_CLK_CONF_REG_ANA_CLK_RTC_SEL_XTAL32K 0x01ul
+  #define RTC_CNTL_CLK_CONF_REG_ANA_CLK_RTC_SEL_RCFD 0x02ul
+  #define RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_XTAL 0x00ul
+  #define RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_PLL 0x01ul
+  #define RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_CK8M 0x02ul
+  #define RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_APLL 0x03ul
+
+  // Khai báo các định nghĩa bit cần sử dụng trên DPORT_CPU_PER_CONF_REG
+  #define DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_80MHZ_APLL_DIV4 0x00ul
+  #define DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_160MHZ_APLL_DIV2 0x01ul
+  #define DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_240MHZ 0x02ul
+
+  /**
+   * Ghi chú:
+   * Các định nghĩa bit cần sử dụng sẽ được bổ sung thêm trong tương lai.
+   */
 
 #endif /* LIB_CLOCK_DEFINITION_H_ */
