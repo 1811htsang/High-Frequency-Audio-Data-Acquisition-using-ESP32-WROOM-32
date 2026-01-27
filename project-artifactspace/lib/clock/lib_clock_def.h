@@ -96,9 +96,9 @@
 
     tdf_strc RTC_CNTL_REGS_PTRS {
       __vo BLANK_REG RESERVED0[12]; // 0x3FF48000 - 0x3FF4802C
-      __vo RTC_CNTL_ANA_CONF_REG_Typedef RTC_CNTL_ANA_CONF;
+      __vo RTC_CNTL_ANA_CONF_REG_Typedef RTC_CNTL_ANA_CONF_REG;
       __vo BLANK_REG RESERVED1[14]; // 0x3FF48034 - 0x3FF4806C
-      __vo RTC_CNTL_CLK_CONF_REG_Typedef RTC_CNTL_CLK_CONF;
+      __vo RTC_CNTL_CLK_CONF_REG_Typedef RTC_CNTL_CLK_CONF_REG;
       __vo BLANK_REG RESERVED2[25]; // 0x3FF48074 - 0x3FF480D4
     } RTC_CNTL_REGS_Typedef;
 
@@ -110,9 +110,9 @@
 
     tdf_strc SYSCON_REGS_PTRS {
       __vo BLANK_REG RESERVED0[1]; // 0x3FF66000 - 0x3FF66004
-      __vo SYSCON_PLL_TICK_CONF_REG_Typedef SYSCON_PLL_TICK_CONF;
+      __vo SYSCON_PLL_TICK_CONF_REG_Typedef SYSCON_PLL_TICK_CONF_REG;
       __vo BLANK_REG RESERVED1[12]; // 0x3FF6600C - 0x3FF66038
-      __vo SYSCON_APLL_TICK_CONF_REG_Typedef SYSCON_APLL_TICK_CONF;
+      __vo SYSCON_APLL_TICK_CONF_REG_Typedef SYSCON_APLL_TICK_CONF_REG;
       __vo BLANK_REG RESERVED2[16]; // 0x3FF66040 - 0x3FF6607C
     } SYSCON_REGS_Typedef;  
 
@@ -194,11 +194,19 @@
     #define RTC_SLOW_CLK_SOURCE_XTAL32K  RTC_CNTL_CLK_CONF_REG_ANA_CLK_RTC_SEL_XTAL32K
     #define RTC_SLOW_CLK_SOURCE_RCFD     RTC_CNTL_CLK_CONF_REG_ANA_CLK_RTC_SEL_RCFD
 
-    #define APLL_CLK                     RTC_CNTL_ANA_CONF_REG_APLL_ENABLE
+    #define APLL_CLK                     0x0Ful 
+
+    /**
+     * Ghi chú:
+     * Do APLL_CLK không nằm trong cấu hình của CPU_CLK
+     * mà nằm trong cấu hình cho I2S, DAC, ADC
+     * Do đó khai báo này chỉ mang tính chất tham khảo.
+     * Cấu hình bật thực tế sẽ do RTC_CNTL_ANA_CONF_REG_APLL_ENABLE đảm nhiệm.
+     */
 
     #define CPU_CLK_SRC_XTAL             RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_XTAL
     #define CPU_CLK_SRC_PLL              RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_PLL
-    #define CPU_CLK_SRC_RCF              RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_CK8M
+    #define CPU_CLK_SRC_RFC              RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_CK8M
     #define CPU_CLK_SRC_APLL             RTC_CNTL_CLK_CONF_REG_SOC_CLK_SEL_APLL
 
     #define CPU_CLK_SRC_PLL_DRV_80MHZ    DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_80MHZ_APLL_DIV4

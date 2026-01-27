@@ -4,17 +4,25 @@
   // Khai báo các thư viện sử dụng chung
 
     #include "lib_keyword_def.h"
+    #include "clock/lib_clock_def.h"
 
   // Khai báo cấu trúc tham số hàm khởi tạo
+
+    /**
+     * Ghi chú:
+     * ở đây có sinh ra lỗi khi hiển thị,
+     * tuy nhiên khi biên dịch thì không có lỗi gì xảy ra.
+     * Nên tạm thời bỏ qua lỗi này.
+     */
 
     tdf_enm {
       CPU_CLK_SRC_XTAL        = 0x00U,
       CPU_CLK_SRC_PLL         = 0x01U,
-      CPU_CLK_SRC_RCF         = 0x02U,
+      CPU_CLK_SRC_RFC         = 0x02U,
       CPU_CLK_SRC_APLL        = 0x03U,
-      RCS_CLK_SOURCE_RSC      = 0x04U,
-      RCS_CLK_SOURCE_XTAL32K  = 0x05U,
-      RCS_CLK_SOURCE_RCFD     = 0x06U,
+      RSC_CLK_SOURCE_RSC      = 0x04U,
+      RSC_CLK_SOURCE_XTAL32K  = 0x05U,
+      RSC_CLK_SOURCE_RCFD     = 0x06U,
       APLL_CLK                = 0x07U
     } CLK_Source;
 
@@ -47,13 +55,18 @@
   #define IS_CPU_CLK_SOURCE(SOURCE) (((SOURCE) == CPU_CLK_SRC_XTAL) || \
                                       ((SOURCE) == CPU_CLK_SRC_PLL) || \
                                       ((SOURCE) == CPU_CLK_SRC_RCF) || \
-                                      ((SOURCE) == CPU_CLK_SRC_APLL))
+                                      ((SOURCE) == CPU_CLK_SRC_APLL) || \
+                                      ((SOURCE) == RCS_CLK_SOURCE_RSC) || \
+                                      ((SOURCE) == RCS_CLK_SOURCE_XTAL32K) || \
+                                      ((SOURCE) == RCS_CLK_SOURCE_RCFD) || \
+                                      ((SOURCE) == APLL_CLK))
 
-  #define IS_CPU_CLK_DRIVE(DRIVE) (((DRIVE) == CPU_CLK_SRC_PLL_DRV_80MHZ) || \
-                                   ((DRIVE) == CPU_CLK_SRC_PLL_DRV_160MHZ) || \
-                                   ((DRIVE) == CPU_CLK_SRC_PLL_DRV_240MHZ) || \
-                                   ((DRIVE) == CPU_CLK_SRC_APLL_DRV_DIV4) || \
-                                   ((DRIVE) == CPU_CLK_SRC_APLL_DRV_DIV2))
+  #define IS_CPU_CLK_DRIVE(DRIVE) (((DRIVE) == NONE) || \
+                                    ((DRIVE) == CPU_CLK_SRC_PLL_DRV_80MHZ) || \
+                                    ((DRIVE) == CPU_CLK_SRC_PLL_DRV_160MHZ) || \
+                                    ((DRIVE) == CPU_CLK_SRC_PLL_DRV_240MHZ) || \
+                                    ((DRIVE) == CPU_CLK_SRC_APLL_DRV_DIV4) || \
+                                    ((DRIVE) == CPU_CLK_SRC_APLL_DRV_DIV2))
 
   #define IS_REF_TICK_FREQ(FREQ) ((FREQ) <= 1000000ul) // Tối đa 1MHz
 
