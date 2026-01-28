@@ -8,42 +8,9 @@
 
   // Khai báo cấu trúc tham số hàm khởi tạo
 
-    /**
-     * Ghi chú:
-     * ở đây có sinh ra lỗi khi hiển thị,
-     * tuy nhiên khi biên dịch thì không có lỗi gì xảy ra.
-     * Nên tạm thời bỏ qua lỗi này.
-     */
-
-    tdf_enm {
-      CPU_CLK_SRC_XTAL        = 0x00U,
-      CPU_CLK_SRC_PLL         = 0x01U,
-      CPU_CLK_SRC_RFC         = 0x02U,
-      CPU_CLK_SRC_APLL        = 0x03U,
-      RSC_CLK_SOURCE_RSC      = 0x04U,
-      RSC_CLK_SOURCE_XTAL32K  = 0x05U,
-      RSC_CLK_SOURCE_RCFD     = 0x06U,
-      APLL_CLK                = 0x07U
-    } CLK_Source;
-
-    tdf_enm {
-      NONE                        = 0x00U, 
-      CPU_CLK_SRC_PLL_DRV_80MHZ   = 0x01U,
-      CPU_CLK_SRC_PLL_DRV_160MHZ  = 0x02U,
-      CPU_CLK_SRC_PLL_DRV_240MHZ  = 0x03U,
-      CPU_CLK_SRC_APLL_DRV_DIV4   = 0x04U,
-      CPU_CLK_SRC_APLL_DRV_DIV2   = 0x05U
-
-      /**
-       * Ghi chú:
-       * Đối với RSC và APLL thì không có phân chia clock.
-       */
-
-    } CLK_Drive;
-
     tdf_strc {
-      CLK_Source Clk_Src; // Chọn nguồn clock 
-      CLK_Drive Clk_Drv; // Chọn phân chia clock 
+      ul Clk_Src; // Chọn nguồn clock
+      ul Clk_Drv; // Chọn phân chia clock 
     } CLK_Init_Param;
 
     tdf_strc {
@@ -79,6 +46,6 @@
     RETR_STAT CLK_DeInit(CLK_Init_Param *init_param);
 
     // >> Hàm khởi tạo REF_TICK
-    RETR_STAT Ref_Tick_Init(Ref_Tick_Init_Param *init_param);
+    RETR_STAT Ref_Tick_Init(CLK_Init_Param *init_param, ul ref_tick_value);
 
 #endif

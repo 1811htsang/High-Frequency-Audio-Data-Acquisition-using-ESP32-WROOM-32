@@ -215,5 +215,30 @@
 
     #define CPU_CLK_SRC_APLL_DRV_DIV4    DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_80MHZ_APLL_DIV4
     #define CPU_CLK_SRC_APLL_DRV_DIV2    DPORT_CPU_PER_CONF_REG_CPU_PERIOD_SEL_160MHZ_APLL_DIV2
+  
+  // Khai báo giá trị lựa chọn clock
+
+    #define CPU_CLK_SOURCE_XTAL     CPU_CLK_SRC_XTAL       // 0x00U
+    #define CPU_CLK_SOURCE_PLL      CPU_CLK_SRC_PLL        // 0x01U
+    #define CPU_CLK_SOURCE_RCF      CPU_CLK_SRC_RFC        // 0x02U
+    #define CPU_CLK_SOURCE_APLL     CPU_CLK_SRC_APLL       // 0x03U
+    #define RSC_CLK_SOURCE_RSC      0x04ul                 // RTC_SLOW_CLK_SOURCE_RSC = 0x00U
+    #define RSC_CLK_SOURCE_XTAL32K  0x05ul                 // RTC_SLOW_CLK_SOURCE_XTAL32K = 0x01U
+    #define RSC_CLK_SOURCE_RCFD     0x06ul                 // RTC_SLOW_CLK_SOURCE_RCFD = 0x02U
+    #define APLL_CLK_SOURCE         APLL_CLK               // 0x0FU
+
+  // Khai báo giá trị chia clock
+
+    #define NONE                            0x00ul
+    #define CPU_CLK_SOURCE_PLL_DRV_80MHZ    0x01ul     // CPU_CLK_SRC_PLL_DRV_80MHZ = 0x00U
+    #define CPU_CLK_SOURCE_PLL_DRV_160MHZ   0x02ul     // CPU_CLK_SRC_PLL_DRV_160MHZ = 0x01U
+    #define CPU_CLK_SOURCE_PLL_DRV_240MHZ   0x03ul     // CPU_CLK_SRC_PLL_DRV_240MHZ = 0x02U
+    #define CPU_CLK_SOURCE_APLL_DRV_DIV4    0x04ul     // CPU_CLK_SRC_APLL_DRV_DIV4 = 0x00U
+    #define CPU_CLK_SOURCE_APLL_DRV_DIV2    0x05ul     // CPU_CLK_SRC_APLL_DRV_DIV2 = 0x01U
+
+  // Khai báo tần số CPU
+    
+    #define CPU_SEL_PLL   80000000ul
+    #define CPU_SEL_APLL  40000000ul // Giá trị lấy trong Audio PLL do không có thông tin cụ thể
 
 #endif /* LIB_CLOCK_DEF_H_ */
