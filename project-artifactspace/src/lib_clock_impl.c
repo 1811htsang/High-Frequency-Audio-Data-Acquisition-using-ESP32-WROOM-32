@@ -10,10 +10,10 @@
   #include <stdint.h>
   #include <stdio.h>
   #include <string.h>
-  #include "lib_keyword_def.h"
-  #include "clock/lib_clock_def.h"
-  #include "clock/lib_clock_hal.h"
-  #include "esp_clk_internal.h"
+  #include "lib/lib_keyword_def.h"
+  #include "lib/lib_condition_def.h"
+  #include "lib/clock/lib_clock_def.h"
+  #include "lib/clock/lib_clock_hal.h"
 
   #ifndef UNIT_TEST
     /**
@@ -27,7 +27,7 @@
 
   RETR_STAT CLK_Init(CLK_Init_Param *init_param) {
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_Init, DBG1: Check Null pointer.\n");
     }
 
@@ -35,14 +35,14 @@
         return STAT_ERROR;
       }
     
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_Init, DBG2: Assert parameter.\n");
     }
 
       assert_param(IS_CPU_CLK_SOURCE(init_param->Clk_Src));
       assert_param(IS_CPU_CLK_DRIVE(init_param->Clk_Drv));
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_Init, DBG3: Setup clock selection.\n");
     }
 
@@ -88,7 +88,7 @@
               break;
           }
 
-          if (DEBUG_MODE == ENABLE) {
+          if (__DEBUG_GET_MODE(ENABLE)) {
             printf("CLK_Init, DBG4: Setup REF_TICK 1MHz.\n");
           }
 
@@ -122,7 +122,7 @@
               break;
           }
 
-          if (DEBUG_MODE == ENABLE) {
+          if (__DEBUG_GET_MODE(ENABLE)) {
             printf("CLK_Init, DBG4: Setup REF_TICK 1MHz.\n");
           }
 
@@ -162,7 +162,7 @@
           break;
       }
     
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_Init, DBG4: Setup procedure ends.\n");
     }
 
@@ -179,7 +179,7 @@
      *   cũng đã ràng buộc 1 nguồn clock rồi.
      */
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_DeInit, DBG1: Check Null pointer.\n");
     }
 
@@ -187,7 +187,7 @@
         return STAT_ERROR;
       }
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_DeInit, DBG2: Assert parameter.\n");
     }
 
@@ -199,7 +199,7 @@
        * Không có thao tác chia nguồn nên không cần xử lý
        */
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_DeInit, DBG3: DeInit procedure starts.\n");
     }
 
@@ -221,7 +221,7 @@
           break;
       }
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("CLK_DeInit, DBG4: DeInit procedure ends.\n");
     }
 
@@ -245,7 +245,7 @@
      * Tick tham chiếu tối đa là 1MHz.
      */
     
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("Ref_Tick_Init, DBG1: Assert parameter.\n");
     }
 
@@ -259,7 +259,7 @@
        * Vì vậy, không cần kiểm tra nguồn clock ở đây.
        */
 
-    if (DEBUG_MODE == ENABLE) {
+    if (__DEBUG_GET_MODE(ENABLE)) {
       printf("Ref_Tick_Init, DBG2: Setup Ref_Tick value.\n");
     }
 
@@ -280,7 +280,6 @@
           return STAT_OK;
           break;
     
-
         default:
           return STAT_ERROR;
           break;
