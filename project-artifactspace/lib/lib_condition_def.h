@@ -37,5 +37,6 @@
   #define __OK_CHECK(__OK__) ((__OK__) == STAT_OK)
   #define __BUSY_CHECK(__BUSY__) ((__BUSY__) == STAT_BUSY)
   #define __DIFF_CHECK(__A__, __B__) ((__A__) != (__B__))
+  #define __EQUAL_CHECK(__A__, __B__) ((__A__) == (__B__))
 
 #endif /* LIB_CONDITION_DEF_H_ */

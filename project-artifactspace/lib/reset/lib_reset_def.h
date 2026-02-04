@@ -84,13 +84,55 @@
 
   // Khai báo các định nghĩa bit cần sử dụng trên RTC_CNTL_RESET_STATE_REG
 
-    #define RTC_CNTL_RESET_CAUSE_PROCPU_POR_RESET       0x01ul
-    #define RTC_CNTL_RESET_CAUSE_PROCPU_RWDT_SYS_RESET  0x10ul
-    #define RTC_CNTL_RESET_CAUSE_PROCPU_BRO_RESET       0x03ul
-    #define RTC_CNTL_RESET_CAUSE_PANIC_RESET       0x04ul
-    #define RTC_CNTL_RESET_CAUSE_INT_WDT_RESET     0x05ul
-    #define RTC_CNTL_RESET_CAUSE_TASK_WDT_RESET    0x06ul
-    #define RTC_CNTL_RESET_CAUSE_BROWN_OUT_RESET   0x07ul
-    #define RTC_CNTL_RESET_CAUSE_SDIO_RESET        0x08ul
+    #define RTC_CNTL_RESET_CAUSE_POR_RESET              0x01ul
+    #define RTC_CNTL_RESET_CAUSE_RWDT_SYS_RESET         0x10ul
+    #define RTC_CNTL_RESET_CAUSE_BRO_RESET              0x0Ful
+    #define RTC_CNTL_RESET_CAUSE_SW_SYS_RESET           0x03ul
+    #define RTC_CNTL_RESET_CAUSE_DS_RESET               0x05ul
+    #define RTC_CNTL_RESET_CAUSE_SDIO_RESET             0x06ul
+    #define RTC_CNTL_RESET_CAUSE_MWDT0_GLO_RESET        0x07ul
+    #define RTC_CNTL_RESET_CAUSE_MWDT1_GLO_RESET        0x08ul
+    #define RTC_CNTL_RESET_CAUSE_RWDT_CORE_RESET        0x09ul
+    #define RTC_CNTL_RESET_CAUSE_RWDT_CPU_RESET         0x0Dul
+    #define RTC_CNTL_RESET_CAUSE_PROCPU_MWDT0_CPU_RESET 0x0Bul
+    #define RTC_CNTL_RESET_CAUSE_PROCPU_SW_CPU_RESET    0x0Cul
+    #define RTC_CNTL_RESET_CAUSE_APPCPU_MWDT1_CPU_RESET 0x0Bul
+    #define RTC_CNTL_RESET_CAUSE_APPCPU_SW_CPU_RESET    0x0Cul
+    #define RTC_CNTL_RESET_CAUSE_APPCPU_PROCPU_CPU_RESET    0x0Eul
+
+  // Khai báo các giá trị reset có thể catch
+
+    /**
+     * Ghi chú:
+     * Các giá trị reset này phải đáp ứng khi cả 2 bên CPU sau khi reset đều fetch ra cùng 1 giá trị.
+     */
+
+    #define RST_POR RTC_CNTL_RESET_CAUSE_POR_RESET
+    #define RST_RWDT_SYS RTC_CNTL_RESET_CAUSE_RWDT_SYS_RESET
+    #define RST_BROWNOUT RTC_CNTL_RESET_CAUSE_BRO_RESET
+    #define RST_SW_SYS RTC_CNTL_RESET_CAUSE_SW_SYS_RESET
+    #define RST_DEEPSLEEP RTC_CNTL_RESET_CAUSE_DS_RESET
+    #define RST_SDIO RTC_CNTL_RESET_CAUSE_SDIO_RESET
+    #define RST_MWDT0_GLO RTC_CNTL_RESET_CAUSE_MWDT0_GLO_RESET
+    #define RST_MWDT1_GLO RTC_CNTL_RESET_CAUSE_MWDT1_GLO_RESET
+    #define RST_RWDT_CORE RTC_CNTL_RESET_CAUSE_RWDT_CORE_RESET
+    #define RST_RWDT_CPU RTC_CNTL_RESET_CAUSE_RWDT_CPU_RESET
+
+  // Khai báo các giá trị reset riêng biệt của PRO_CPU
+
+    #define RST_PRO_MWDT0_CPU RTC_CNTL_RESET_CAUSE_PROCPU_MWDT0_CPU_RESET
+    #define RST_PRO_SW_CPU RTC_CNTL_RESET_CAUSE_PROCPU_SW_CPU_RESET
+
+  // Khai báo các giá trị reset riêng biệt của APP_CPU
+
+    #define RST_APP_MWDT1_CPU RTC_CNTL_RESET_CAUSE_APPCPU_MWDT1_CPU_RESET
+    #define RST_APP_SW_CPU RTC_CNTL_RESET_CAUSE_APPCPU_SW_CPU_RESET
+    #define RST_APP_CPU_PRO_CPU RTC_CNTL_RESET_CAUSE_APPCPU_PROCPU_CPU_RESET
+
+  // Khai báo nguồn CPU select
+
+    #define PRO_CPU 0x0Ful
+    #define APP_CPU 0xF0ul
+    #define BOTH_CPU 0xFFul
 
 #endif
