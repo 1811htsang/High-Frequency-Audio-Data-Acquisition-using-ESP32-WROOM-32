@@ -19,7 +19,7 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Tìm hiểu về I2S Protocol và cách hoạt động của I2S trên ESP32
 - [x] Tìm hiểu các linh kiện phần cứng hỗ trợ thiết kế
 - [x] Tìm hiểu về SPI Protocol và cách hoạt động của SPI trên ESP32
-- [ ] Bổ sung driver để call system reset lên hệ thống
+- [x] Tái cấu trúc và thay đổi cách tận dụng driver từ ESP-IDF thay thế cho bare-metal driver
 
 ## Giai đoạn Kiến trúc
 
