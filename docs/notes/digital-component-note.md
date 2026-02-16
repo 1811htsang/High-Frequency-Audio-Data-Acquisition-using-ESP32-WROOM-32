@@ -1,7 +1,11 @@
-# Ghi chú
-Note này chứa thông tin các linh kiện điện tử thu thập cho đề tài 
+# Digital Component Note
 
-# Danh sách linh kiện
+## Ghi chú
+
+Note này chứa thông tin các linh kiện điện tử thu thập cho đề tài
+
+## Danh sách linh kiện
+
 1. FR4 PCB Hàn Test Board 10x10cm Phủ Xanh 1 Mặt
    - Board PCB cơ bản để hàn các linh kiện điện tử lên.
    - Số lượng : 1 tấm
@@ -18,4 +22,3 @@ Note này chứa thông tin các linh kiện điện tử thu thập cho đề t
    - Module ADC 24 bit dùng để chuyển đổi tín hiệu âm thanh từ analog sang digital.
    - Số lượng : 1 cái
    - Đường link tại [đây](https://shopee.vn/product/36282148/25561081971).
-    
