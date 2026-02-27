@@ -1,8 +1,12 @@
-.vscode/settings.json
-.vscode/settings.json
-project-obsidianspace/.obsidian/app.json
-project-obsidianspace/.obsidian/appearance.json
-project-obsidianspace/.obsidian/core-plugins.json
-project-obsidianspace/.obsidian/workspace.json
-project-obsidianspace/.obsidian/themes/Tokyo Night/manifest.json
-project-obsidianspace/.obsidian/themes/Tokyo Night/theme.css
+project-obsidianspace/.obsidian/*
+.vscode/*
+project-artifactspace/main/CMakeLists.txt
+project-artifactspace/.clangd
+project-artifactspace/CMakeLists.txt
+project-artifactspace/.devcontainer/*
+project-artifactspace/.vscode/*
+project-artifactspace/build/*
+project-artifactspace/sdkconfig
+project-kicadspace/designspace/designspace-backups/*
+project-kicadspace/designspace/designspace.kicad_prl
+project-kicadspace/designspace/designspace.kicad_pro
