@@ -5,3 +5,4 @@ project-artifactspace/.clangd
 project-artifactspace/CMakeLists.txt
 project-artifactspace/.devcontainer/*
 project-artifactspace/.vscode/*
+project-kicadspace/*

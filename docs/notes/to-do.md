@@ -20,6 +20,7 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Tìm hiểu các linh kiện phần cứng hỗ trợ thiết kế
 - [x] Tìm hiểu về SPI Protocol và cách hoạt động của SPI trên ESP32
 - [x] Tái cấu trúc và thay đổi cách tận dụng driver từ ESP-IDF thay thế cho bare-metal driver
+- [x] Mua linh kiện phần cứng cần thiết cho việc phát triển và thử nghiệm
 
 ## Giai đoạn Kiến trúc
 
