@@ -14,11 +14,11 @@ Note này chứa thông tin các linh kiện điện tử thu thập cho đề t
    - Dây điện lõi 1.6mm dùng để kết nối các linh kiện điện tử trên board PCB.
    - Số lượng : 20 sợi
    - Đường link tại [đây](https://www.thegioiic.com/day-han-mach-pcb-22awg-dai-20cm-mau-den).
-3. MAX9812 Module Khuếch Đại Microphone
+3. MAX9812 Module Khuếch Đại Microphone (Đã mua)
    - Module khuếch đại tín hiệu âm thanh từ microphone.
    - Số lượng : 1 cái
    - Đường link tại [đây](https://www.thegioiic.com/max9812-module-khuech-dai-microphone).
-4. PCM1808 PCM1808PWR IC chuyển đổi tín hiệu ADC 24-bit, 99-dB SNR, 96-kHz
+4. PCM1808 PCM1808PWR IC chuyển đổi tín hiệu ADC 24-bit, 99-dB SNR, 96-kHz (Đã mua)
    - Module ADC 24 bit dùng để chuyển đổi tín hiệu âm thanh từ analog sang digital.
    - Số lượng : 1 cái
    - Đường link tại [đây](https://shopee.vn/product/36282148/25561081971).
