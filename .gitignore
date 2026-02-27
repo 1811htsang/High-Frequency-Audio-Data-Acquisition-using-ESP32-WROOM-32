@@ -6,6 +6,7 @@ project-artifactspace/CMakeLists.txt
 project-artifactspace/.devcontainer/*
 project-artifactspace/.vscode/*
 project-artifactspace/build/*
+project-artifactspace/sdkconfig.*
 project-artifactspace/sdkconfig
 project-kicadspace/designspace/designspace-backups/*
 project-kicadspace/designspace/designspace.kicad_prl

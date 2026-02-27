@@ -29,7 +29,7 @@ This project focuses on the development of a high-frequency audio data acquisiti
 
 ## Features
 
-- **Microcontroller**: ESP32-WROOM-32 (ESP32-WROOM-32)
+- **Microcontroller**: ESP32-S3-DevKitC N16R8 for high-performance processing and connectivity.
 - **Peripherals**:
   - SPI for communication with external microSD card for data storage
   - I2S for audio data acquisition from the ADC
@@ -51,3 +51,9 @@ Note that this sections can be expand with new requirements in the future.
 - TL072IDT operational amplifier
 - MicroSD card module for data storage
 - Optional: I2C LCD display for status monitoring
+
+---
+
+## References
+
+- Audio Data Acquisition System Design Based on ARM and DSP by Yongxin Wang, 2015.
