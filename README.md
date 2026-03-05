@@ -45,11 +45,11 @@ This project focuses on the development of a high-frequency audio data acquisiti
 
 Note that this sections can be expand with new requirements in the future.
 
-- ESP32-WROOM-32 microcontroller
+- ESP32-S3-DevKitC N16R8 microcontroller
 - MAX9812 microphone amplifier
 - PCM1808 ADC
 - TL072IDT operational amplifier
-- MicroSD card module for data storage
+- MicroSD card module for data storage (Optional)
 - Optional: I2C LCD display for status monitoring
 
 ---
