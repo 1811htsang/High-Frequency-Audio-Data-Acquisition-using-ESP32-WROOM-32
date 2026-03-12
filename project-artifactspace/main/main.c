@@ -95,13 +95,11 @@
 
     // Cấu hình quản lý năng lượng
 
-      // esp_pm_config_t pm_config = {
-      //   .max_freq_mhz = 240,
-      //   .min_freq_mhz = 40,
-      //   .light_sleep_enable = true
-      // };
-
-      // ESP_ERROR_CHECK(esp_pm_configure(&pm_config));
+      /**
+       * Ghi chú:
+       * Đã sử dụng cấu hình năng lượng thông qua
+       * `menuconfig` nên không cần dùng API để cấu hình lại ở đây
+       */
 
     // Cấu hình I2S
 
