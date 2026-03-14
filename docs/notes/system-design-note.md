@@ -18,3 +18,4 @@ Từ thiết kế ban đầu, đã có một số thay đổi để phù hợp v
 
 - Thay thế cấu trúc thiết kế hệ thống của bài báo bằng một thiết kế mới sử dụng ESP32-S3-DevKitC N16R8 làm vi điều khiển chính, kết hợp với các bộ thu thập dữ liệu như MAX9812, PCM1808, TL072IDT để xử lý âm thanh.
 - Vận dụng các giao thức như SPI, I2S, GPIO, RCC, IWDG, I2C và DMA để đảm bảo hiệu quả trong việc thu thập và xử lý dữ liệu âm thanh tương tự (96kHz/24-bit) như trong thiết kế ban đầu.
+- Trong quá trình thiết kế tài liệu, API và bản thân phần cứng đã cho phép hỗ trợ DMA tự động với I2S trên ESP32, điều này giúp giảm tải cho CPU và cải thiện hiệu suất xử lý âm thanh. Do đó, bản thân đề tài cũng sẽ có sự mở rộng về nội dung hướng tới để kiểm chứng khả năng vận dụng của hệ thống này trong công nghiệp như bảo trì tiên đoán - predictive maintenance, một ứng dụng phổ biến của việc thu thập dữ liệu âm thanh trong công nghiệp.

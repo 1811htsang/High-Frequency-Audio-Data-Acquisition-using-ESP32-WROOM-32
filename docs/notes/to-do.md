@@ -21,6 +21,8 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Tìm hiểu về SPI Protocol và cách hoạt động của SPI trên ESP32
 - [x] Tái cấu trúc và thay đổi cách tận dụng driver từ ESP-IDF thay thế cho bare-metal driver
 - [x] Mua linh kiện phần cứng cần thiết cho việc phát triển và thử nghiệm
+- [x] Hàn mạch PCM1808 để thử nghiệm và cấu hình I2S
+- [ ] Cấu hình I2S để thu tín hiệu âm thanh từ PCM1808 và MAX9812
 
 ## Giai đoạn Kiến trúc
 
