@@ -22,7 +22,9 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Tái cấu trúc và thay đổi cách tận dụng driver từ ESP-IDF thay thế cho bare-metal driver
 - [x] Mua linh kiện phần cứng cần thiết cho việc phát triển và thử nghiệm
 - [x] Hàn mạch PCM1808 để thử nghiệm và cấu hình I2S
-- [ ] Cấu hình I2S để thu tín hiệu âm thanh từ PCM1808 và MAX9812
+- [x] Cấu hình I2S để thu tín hiệu âm thanh từ PCM1808 và MAX9812
+- [x] Cắm mạch và kiểm tra tín hiệu hoạt động
+- [ ] Bổ sung các linh kiện như tụ điện, trở điện để ổn định nguồn điện và giảm nhiễu
 
 ## Giai đoạn Kiến trúc
 
