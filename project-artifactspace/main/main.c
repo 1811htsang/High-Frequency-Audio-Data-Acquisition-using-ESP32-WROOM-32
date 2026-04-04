@@ -78,7 +78,7 @@
           .sample_rate_hz = 96000,
           .clk_src = I2S_CLK_SRC_EXTERNAL,
           .mclk_multiple = I2S_MCLK_MULTIPLE_256,
-          
+          .ext_clk_freq_hz = 24576000,
         },
         .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_STEREO),
         .gpio_cfg = {
@@ -100,7 +100,8 @@
         .clk_cfg = {
           .sample_rate_hz = I2S_SAMPLE_RATE_HZ,
           .clk_src = I2S_CLK_SRC_DEFAULT, // Tạm thời sử dụng clock PLL nội bộ để test
-          .mclk_multiple = I2S_MCLK_MULTIPLE_256
+          .mclk_multiple = I2S_MCLK_MULTIPLE_256,
+          .ext_clk_freq_hz = 24576000, // Tần số của thạch anh rời dự kiến sẽ sử dụng, chỉ mang tính chất tham khảo khi test với clock nội bộ
         },
         .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_STEREO),
         .gpio_cfg = {
