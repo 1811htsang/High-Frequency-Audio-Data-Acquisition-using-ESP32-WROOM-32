@@ -22,5 +22,3 @@ Dựa trên các yêu cầu đã được phân tích, hệ thống sẽ cần p
 
 - SoC ESP32-S3 có nguồn clock riêng biệt giúp hoạt động ở mức tối đa 240Mhz.
 - PCM1808 dùng nguồn clock thạch anh 24.576Mhz với IC 74HCU04 để tạo xung clock sạch cho việc lấy mẫu âm thanh ở tốc độ 96kHz.
-
-// Sẽ viết tiếp. 
