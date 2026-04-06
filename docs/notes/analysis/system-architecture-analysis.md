@@ -22,3 +22,11 @@ Dựa trên các yêu cầu đã được phân tích, hệ thống sẽ cần p
 
 - SoC ESP32-S3 có nguồn clock riêng biệt giúp hoạt động ở mức tối đa 240Mhz.
 - PCM1808 dùng nguồn clock thạch anh 24.576Mhz với IC 74HCU04 để tạo xung clock sạch cho việc lấy mẫu âm thanh ở tốc độ 96kHz.
+
+## Software Architecture
+
+Phần mềm của hệ thống sẽ được thiết kế theo kiến trúc phân lớp để đảm bảo tính modular và dễ bảo trì. Các lớp chính bao gồm:
+
+- Lớp MCAL dùng API của ESP-IDF để giao tiếp với phần cứng và quản lý các thiết bị ngoại vi.
+- Lớp Middleware để xử lý dữ liệu âm thanh, thực hiện các thuật toán phân tích và trích xuất đặc trưng.
+- Lớp Application để quản lý logic ứng dụng, giao tiếp với người dùng và xử lý các tác vụ liên quan đến dữ liệu và kết quả phân tích.
