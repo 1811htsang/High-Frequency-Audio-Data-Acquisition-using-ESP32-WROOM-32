@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "pw14")(type "KiCad")(uri "${KIPRJMOD}/pw14.pretty")(options "")(descr ""))
+  (lib (name "tl072")(type "KiCad")(uri "${KIPRJMOD}/tl072.pretty")(options "")(descr ""))
+  (lib (name "max9812")(type "KiCad")(uri "${KIPRJMOD}/max9812.pretty")(options "")(descr ""))
+  (lib (name "tct4016r")(type "KiCad")(uri "${KIPRJMOD}/tct4016r.pretty")(options "")(descr ""))
+)
