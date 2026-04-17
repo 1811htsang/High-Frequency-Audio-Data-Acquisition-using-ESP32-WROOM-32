@@ -5,4 +5,5 @@
   (lib (name "max9812")(type "KiCad")(uri "${KIPRJMOD}/max9812.pretty")(options "")(descr ""))
   (lib (name "tct4016r")(type "KiCad")(uri "${KIPRJMOD}/tct4016r.pretty")(options "")(descr ""))
   (lib (name "pj342s")(type "KiCad")(uri "${KIPRJMOD}/pj342s.pretty")(options "")(descr ""))
+  (lib (name "esp32-s3-kit")(type "KiCad")(uri "${KIPRJMOD}/esp32-s3-kit.pretty")(options "")(descr ""))
 )
