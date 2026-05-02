@@ -1,0 +1,27 @@
+Drill report for designspace.kicad_pcb
+Created on 2026-05-02T16:37:48+0700
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'designspace-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (22 holes)
+    T2  1.000mm  0.0394"  (21 holes)
+    T3  1.020mm  0.0402"  (44 holes)
+    T4  1.060mm  0.0417"  (2 holes)
+
+    Total plated holes count 89
+
+
+Drill file 'designspace-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  1.500mm  0.0591"  (2 holes)
+    T2  2.200mm  0.0866"  (4 holes)
+
+    Total unplated holes count 6
