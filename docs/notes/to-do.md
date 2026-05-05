@@ -24,17 +24,22 @@ Lộ trình triển khai chi tiết, đi từ
 - [x] Hàn mạch PCM1808 để thử nghiệm và cấu hình I2S
 - [x] Cấu hình I2S để thu tín hiệu âm thanh từ PCM1808 và MAX9812
 - [x] Cắm mạch và kiểm tra tín hiệu hoạt động
+
+## Giai đoạn Kiến trúc phần cứng
+
 - [x] Thiết kế PCB theo mẫu sử dụng PCM1808, MAX9812, ESP32, TL072IDT gốc
 - [x] Bổ sung thiết kế phân tách đường tín hiệu cơ học với PJ-342S để giảm nhiễu và cải thiện chất lượng âm thanh
 - [x] Làm mượt tín hiệu clock cho PCM1808 với mạch Pierce Oscillator để giảm jitter và cải thiện chất lượng âm thanh
 - [x] Bổ sung đầu thu siêu âm TCT40-16R để thu tín hiệu siêu âm và tích hợp vào hệ thống làm stereo mode
-- [ ] Bổ sung mạch ổn áp DC-DC 1 MHz 3/6V-12V để cung cấp nguồn ổn định cho hệ thống
-- [ ] Thêm các linh kiện bổ sung để tách nguồn xuống 9V, 5V, 3.3V cho các thành phần khác nhau của hệ thống
+- [x] Bổ sung mạch ổn áp DC-DC 1 MHz 3/6V-12V để cung cấp nguồn ổn định cho hệ thống
+- [x] Thêm các linh kiện bổ sung để tách nguồn xuống 9V, 5V, 3.3V cho các thành phần khác nhau của hệ thống
+- [ ] Đặt gia công in mạch
 
-## Giai đoạn Kiến trúc
+## Giai đoạn Xử lý dữ liệu & Truyền thông
 
-## Giai đoạn DSP
-
-## Giai đoạn Giao tiếp dữ liệu
+- [ ] Thiết kế server nội bộ để ESP32 giao tiếp và truyền dữ liệu âm thanh về kit xử lý trung tâm
+- [ ] Thiết kế driver giao tiếp giữa ESP32 và server nội bộ
+- [ ] Tìm hiểu cơ chế giao tiếp với PSRAM để tận dụng làm ring buffer cho dữ liệu âm thanh
+- [ ] Cân nhắc vấn đề sử dụng Core CIEDPC để xử lý hệ thống theo hướng sự kiện (event-driven) để tối ưu hiệu suất và giảm độ trễ với 2 core của ESP32
 
 ## Giai đoạn Kiểm chứng và tối ưu
