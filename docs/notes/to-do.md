@@ -37,6 +37,7 @@ Lộ trình triển khai chi tiết, đi từ
 
 ## Giai đoạn Xử lý dữ liệu & Truyền thông
 
+- [x] Lựa chọn dataset và thuật toán xử lý dữ liệu âm thanh phù hợp để kiểm chứng khả năng thu thập dữ liệu âm thanh chất lượng cao của hệ thống
 - [ ] Thiết kế server nội bộ để ESP32 giao tiếp và truyền dữ liệu âm thanh về kit xử lý trung tâm
 - [ ] Thiết kế driver giao tiếp giữa ESP32 và server nội bộ
 - [ ] Tìm hiểu cơ chế giao tiếp với PSRAM để tận dụng làm ring buffer cho dữ liệu âm thanh
