@@ -10,6 +10,11 @@ Lộ trình triển khai chi tiết, đi từ
   4. **Giao tiếp dữ liệu** (Connectivity & Data Visualization)
   5. **Kiểm chứng và tối ưu** (Validation & Optimization)
 
+## Các công việc phụ
+
+- [ ] Sửa đổi lại README để cập nhật thông tin về dự án và hướng dẫn sử dụng
+- [ ] Viết tài liệu hướng dẫn sử dụng và cấu hình hệ thống cho người dùng
+
 ## Giai đoạn Cốt lõi
 
 - [x] Thiết kế khung dự án (Project Structure)
