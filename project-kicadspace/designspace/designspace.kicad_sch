@@ -4051,10 +4051,6 @@
 		(uuid "540cde92-d4ff-466c-afaf-7fa572419a75")
 	)
 	(no_connect
-		(at 88.9 78.74)
-		(uuid "58d9bd65-c0f7-4692-8af2-1a7765961cf9")
-	)
-	(no_connect
 		(at 83.82 132.08)
 		(uuid "5b7e1fa9-d7c2-4720-a89b-3b334f1f9871")
 	)
@@ -4115,10 +4111,6 @@
 		(uuid "8d898715-a2fc-43fe-ad10-21e8796ccaf2")
 	)
 	(no_connect
-		(at 93.98 125.73)
-		(uuid "9897c304-45dd-406b-af24-f309c06c615b")
-	)
-	(no_connect
 		(at 163.83 40.64)
 		(uuid "a892573a-7fbf-4977-8852-0db1c33d456d")
 	)
@@ -4137,10 +4129,6 @@
 	(no_connect
 		(at 175.26 22.86)
 		(uuid "b6c8c2ee-8bf6-49e8-b8d6-c99a058682da")
-	)
-	(no_connect
-		(at 77.47 63.5)
-		(uuid "bda0c67e-3785-4f94-be70-7ed7605e4ad4")
 	)
 	(no_connect
 		(at 83.82 129.54)
@@ -5624,7 +5612,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 101.6 40.64 0)
 			(effects
 				(font
@@ -6935,7 +6923,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 156.21 40.64 0)
 			(effects
 				(font
@@ -7241,7 +7229,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 138.43 40.64 0)
 			(effects
 				(font
@@ -7996,7 +7984,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 129.54 83.82 0)
 			(effects
 				(font
@@ -8989,7 +8977,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 120.65 40.64 0)
 			(effects
 				(font
@@ -9712,7 +9700,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_7050-4Pin_7.0x5.0mm"
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering"
 			(at 109.22 66.04 0)
 			(effects
 				(font
@@ -10010,7 +9998,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-14_5.3x10.2mm_P1.27mm"
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 44.45 34.29 0)
 			(effects
 				(font
@@ -10247,7 +10235,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-14_5.3x10.2mm_P1.27mm"
+		(property "Footprint" "Package_SO:SO-14_3.9x8.65mm_P1.27mm"
 			(at 109.22 83.82 0)
 			(effects
 				(font
