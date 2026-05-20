@@ -13,6 +13,8 @@
   #include "driver/i2s_std.h"
   #include "driver/i2s_common.h"
   #include "driver/gpio.h"
+  #include "lib_keyword_def.h"
+  #include "lib_condition_def.h"
 
 // Khai báo các hằng số và biến toàn cục nếu cần thiết
 
